@@ -7,7 +7,7 @@ More functionality to come very soon.
 
 ##USAGE:
 
-```
+`````javascript
 var onapp = require('onapp');
 
 var config = {
@@ -73,4 +73,4 @@ client.getVirtualMachines(function (err, vm) {
     console.log(vm);
   }
 });
-```
+`````
