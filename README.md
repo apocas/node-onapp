@@ -25,8 +25,9 @@ client.getVersion(function (err, data) {
 
 
 //Template list
-client.getSystemTemplates(function (err, data) {
-  console.log(data);
+//returns a array with Template objects.
+client.getSystemTemplates(function (err, templates) {
+  console.log(templates);
 });
 
 
@@ -47,6 +48,7 @@ var options = {
   rate_limit: 'none'
 };
 
+//return a VirtualMachine object
 client.createVirtualMachine(options, function (err, vm) {
   if(err !== null) {
     console.log(err);
@@ -57,6 +59,7 @@ client.createVirtualMachine(options, function (err, vm) {
 
 
 //Get VM details
+//returns a array of VirtualMachine objects
 client.getVirtualMachine('vm_id', function (err, vm) {
   if(err !== null) {
     console.log(err);
