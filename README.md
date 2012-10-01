@@ -5,7 +5,12 @@ node.js Onapp module
 
 More functionality to come...
 
-##USAGE:
+##Installation:
+```
+npm install onapp
+```
+
+##Usage:
 
 `````javascript
 var onapp = require('onapp');
