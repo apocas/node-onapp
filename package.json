@@ -1,0 +1,33 @@
+{
+  "name": "onapp",
+  "description": "A client implementation for Onapp",
+  "version": "0.1",
+  "author": "Pedro Dias <petermdias@gmail.com>",
+  "maintainers": [
+    "apocas <petermdias@gmail.com>"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/apocas/node-onapp.git"
+  },
+  "keywords": [
+    "cloud computing",
+    "api",
+    "onapp"
+  ],
+  "dependencies": {
+    "pkginfo": "0.2.x",
+    "request": "2.9.x"
+  },
+  "devDependencies": {
+    "vows": "0.5.x"
+  },
+  "main": "./lib/onapp",
+  "scripts": {
+    "test": "vows test/*-test.js --spec"
+  },
+  "engines": {
+    "node": ">= 0.4"
+  }
+}
+
