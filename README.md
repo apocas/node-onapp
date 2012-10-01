@@ -3,7 +3,7 @@ node-onapp
 
 node.js Onapp module
 
-More functionality to come very soon.
+More functionality to come...
 
 ##USAGE:
 
