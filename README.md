@@ -10,7 +10,7 @@ More functionality to come...
 npm install onapp
 ```
 
-##Usage:
+##Examples:
 
 `````javascript
 var onapp = require('onapp');
@@ -69,7 +69,9 @@ client.getVirtualMachine('vm_id', function (err, vm) {
   if(err !== null) {
     console.log(err);
   } else {
-    console.log(vm);
+    vm.off(function(error, data){});
+    //vm.reboot(function(error, data){});
+    //...
   }
 });
 
