@@ -3,7 +3,7 @@ node-onapp
 
 node.js Onapp module
 
-More functionality to come...
+Check the examples below for usage.
 
 ##Installation:
 ```
