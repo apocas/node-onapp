@@ -1,7 +1,9 @@
 node-onapp
 ==========
 
-node.js Onapp module
+node.js onapp module
+
+More methods coming...
 
 Check the examples below for usage.
 
