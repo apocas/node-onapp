@@ -18,7 +18,7 @@ var onapp = require('onapp');
 var config = {
   username: 'username@email.com',
   apiKey: 'api_hash',
-  serverUrl: '192.168.1.1'
+  serverUrl: 'http://192.168.1.1'
 };
 
 var client = onapp.createClient(config);
