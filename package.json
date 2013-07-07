@@ -21,14 +21,14 @@
     "jquery": "1.7.x"
   },
   "devDependencies": {
-    "vows": "0.5.x"
+    "mocha": "*"
   },
   "main": "./lib/onapp",
   "scripts": {
-    "test": "vows test/*-test.js --spec"
+    "test": "make test"
   },
   "engines": {
-    "node": ">= 0.4"
+    "node": ">= 0.8"
   }
 }
 
