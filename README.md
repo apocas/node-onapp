@@ -85,4 +85,27 @@ client.getVirtualMachines(function (err, vm) {
     console.log(vm);
   }
 });
+
+//Creating an user, billing plan and its resurces
+client.createUser({'email': 'xpto@xpto.xpto','first_name': 'XPTO','last_name': 'OTPX','login': 'xptoxpto','password': '123qwe_123qwe, 'user_group_id': '1', 'role_ids': ['1']}, function(err, user) {
+  if (err) throw err;
+  console.log('User created!');
+
+  client.createBillingPlan({'label': 'xpto@xpto.xpto plan','currency_code': 'USD','monthly_price': '0.0'}, function(err, billingplan) {
+    if (err) throw err;
+    console.log('Billing plan created!');
+
+    user.billing_plan_id = billingplan.id;
+    user.save(function(err, data) {
+      if (err) throw err;
+      console.log('User saved!');
+
+      billingplan.addResource({resource: 'VmLimit', limits: {limit: 1, limit_free: 0}}, function(err, resource) {
+        if (err) throw err;
+        console.log('Resource added!');
+        console.log('SUCCESS!!!');
+      });
+    });
+  });
+});
 `````

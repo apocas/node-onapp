@@ -13,6 +13,7 @@ describe('authok', function() {
   });
 
   it('should get version without error', function(done) {
+    this.timeout(10000);
     client.getVersion(function (err, data) {
       if (err) throw err;
       done();
@@ -23,7 +24,6 @@ describe('authok', function() {
 
 
 describe('authnok', function() {
-
   var client;
 
   before(function(done){
@@ -32,6 +32,7 @@ describe('authnok', function() {
   });
 
   it('should fail auth with wrong credentials', function(done) {
+    this.timeout(10000);
     client.getVersion(function (err, data) {
       if (!err) throw err;
       done();

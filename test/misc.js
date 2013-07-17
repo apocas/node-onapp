@@ -14,6 +14,7 @@ describe('version', function() {
 
 
   it('should get templates without error', function(done) {
+    this.timeout(30000);
     client.getSystemTemplates(function (err, templates) {
       if (err) throw err;
       assert(true, templates instanceof Array);
@@ -23,6 +24,7 @@ describe('version', function() {
 
 
   it('should get virtualmachines list without error', function(done) {
+    this.timeout(60000);
     client.getVirtualMachines(function (err, vms) {
       if (err) throw err;
       assert(true, vms instanceof Array);
