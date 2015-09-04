@@ -14,6 +14,8 @@ npm install onapp
 
 ##Examples:
 
+*Note: [According to OnApp API docs](https://docs.onapp.com/display/41API/OnApp+4.1+API+Guide#OnApp4.1APIGuide-APIAuthentication) you need to either use your username and password or your email address + API key. API key + username won't work.*
+
 `````javascript
 var onapp = require('onapp');
 
