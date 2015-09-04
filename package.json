@@ -16,8 +16,7 @@
     "onapp"
   ],
   "dependencies": {
-    "request": "2.9.x",
-    "jquery": "1.7.x"
+    "request": "2.9.x"
   },
   "devDependencies": {
     "mocha": "*"
@@ -30,4 +29,3 @@
     "node": ">= 0.8"
   }
 }
-
