@@ -31,8 +31,8 @@ describe('virtualmachine', function() {
       rate_limit: 'none'
     };
 
+    self.timeout(10000);
     client.createVirtualMachine(options, function (err, vm) {
-      self.timeout(10000);
       if (err) throw err;
       vmg = vm;
       done();
