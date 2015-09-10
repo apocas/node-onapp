@@ -48,14 +48,22 @@ describe('virtualmachine', function() {
   });
 
   after(function(done) {
-    this.timeout(67000);
+    // wait up to 10 mins until the virtual machine has finished building
+    this.timeout(600000);
 
-    setTimeout(function() {
-      vmg.destroy(function(err, data) {
+    var interval = setInterval(function() {
+      client.getVirtualMachine(vmg.id, function(err, vm) {
         if (err) throw err;
-        done();
+
+        if (vm.built || !vm.locked) {
+          clearInterval(interval);
+          vmg.destroy(function(err) {
+            if (err) throw err;
+            done();
+          });
+        }
       });
-    }, 65000);
+    }, 1000);
   });
 
 });
