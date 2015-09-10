@@ -85,7 +85,7 @@ client.getVirtualMachines(function (err, vm) {
     console.log(err);
   } else {
     console.log(vm);
- }
+  }
 });
 
 //Creating a user, billing plan and its resources
