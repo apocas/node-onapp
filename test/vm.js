@@ -1,21 +1,18 @@
-var assert = require('assert'),
-  onapp = require('./../lib/onapp'),
-  config = require('./config');
+/* global describe it before after */
+var onapp = require('./../lib/onapp')
+var config = require('./config')
 
+describe('virtualmachine', function () {
+  var client
+  var vmg
 
-describe('virtualmachine', function() {
+  before(function (done) {
+    client = onapp.createClient(config.validConfig)
+    done()
+  })
 
-  var client;
-  var vmg;
-
-  before(function(done){
-    client = onapp.createClient(config.validConfig);
-    done();
-  });
-
-
-  it('should create virtualmachine without error', function(done) {
-    var self = this;
+  it('should create virtualmachine', function (done) {
+    var self = this
     var options = {
       memory: '512',
       cpus: '1',
@@ -29,33 +26,32 @@ describe('virtualmachine', function() {
       hypervisor_id: 2,
       initial_root_password: '123Aadsf_Asda45675',
       rate_limit: 'none'
-    };
+    }
 
     client.createVirtualMachine(options, function (err, vm) {
-      self.timeout(10000);
-      if (err) throw err;
-      vmg = vm;
-      done();
-    });
-  });
+      self.timeout(10000)
+      if (err) throw err
+      vmg = vm
+      done()
+    })
+  })
 
-  it('should get previous created virtualmachine without error', function(done) {
-    this.timeout(10000);
+  it('should get previous created virtualmachine', function (done) {
+    this.timeout(10000)
     client.getVirtualMachine(vmg.id, function (err, vm) {
-      if (err) throw err;
-      done();
-    });
-  });
+      if (err) throw err
+      done()
+    })
+  })
 
-  after(function(done) {
-    this.timeout(67000);
+  after(function (done) {
+    this.timeout(67000)
 
-    setTimeout(function() {
-      vmg.destroy(function(err, data) {
-        if (err) throw err;
-        done();
-      });
-    }, 65000);
-  });
-
-});
+    setTimeout(function () {
+      vmg.destroy(function (err, data) {
+        if (err) throw err
+        done()
+      })
+    }, 65000)
+  })
+})

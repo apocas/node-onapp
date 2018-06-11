@@ -1,42 +1,37 @@
-var assert = require('assert'),
-  onapp = require('./../lib/onapp'),
-  config = require('./config');
+/* global describe it before */
+var onapp = require('./../lib/onapp')
+var config = require('./config')
 
+describe('authok', function () {
+  var client
 
-describe('authok', function() {
+  before(function (done) {
+    client = onapp.createClient(config.validConfig)
+    done()
+  })
 
-  var client;
-
-  before(function(done){
-    client = onapp.createClient(config.validConfig);
-    done();
-  });
-
-  it('should get version without error', function(done) {
-    this.timeout(10000);
+  it('should get version', function (done) {
+    this.timeout(10000)
     client.getVersion(function (err, data) {
-      if (err) throw err;
-      done();
-    });
-  });
+      if (err) throw err
+      done()
+    })
+  })
+})
 
-});
+describe('authnok', function () {
+  var client
 
+  before(function (done) {
+    client = onapp.createClient(config.invalidConfig)
+    done()
+  })
 
-describe('authnok', function() {
-  var client;
-
-  before(function(done){
-    client = onapp.createClient(config.invalidConfig);
-    done();
-  });
-
-  it('should fail auth with wrong credentials', function(done) {
-    this.timeout(10000);
+  it('should fail auth with wrong credentials', function (done) {
+    this.timeout(10000)
     client.getVersion(function (err, data) {
-      if (!err) throw err;
-      done();
-    });
-  });
-
-});
+      if (!err) throw err
+      done()
+    })
+  })
+})

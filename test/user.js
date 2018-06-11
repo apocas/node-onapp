@@ -1,25 +1,22 @@
-var assert = require('assert'),
-  onapp = require('./../lib/onapp'),
-  config = require('./config');
+/* global describe it before */
+var assert = require('assert')
+var onapp = require('./../lib/onapp')
+var config = require('./config')
 
+describe('user', function () {
+  var client
 
-describe('user', function() {
+  before(function (done) {
+    client = onapp.createClient(config.validConfig)
+    done()
+  })
 
-  var client;
-
-  before(function(done){
-    client = onapp.createClient(config.validConfig);
-    done();
-  });
-
-
-  it('should get users list without error', function(done) {
-    this.timeout(60000);
+  it('should get users list', function (done) {
+    this.timeout(60000)
     client.getUsers(function (err, users) {
-      if (err) throw err;
-      assert(true, users instanceof Array);
-      done();
-    });
-  });
-
-});
+      if (err) throw err
+      assert(true, users instanceof Array)
+      done()
+    })
+  })
+})
