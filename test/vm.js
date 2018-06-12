@@ -15,17 +15,17 @@ describe('virtualmachine', function () {
   it('should create virtualmachine', function (done) {
     var self = this
     var options = {
-      memory: '1024',
-      cpus: '1',
-      cpu_shares: '50',
+      memory: 1024,
+      cpus: 1,
+      cpu_shares: 50,
       hostname: 'tests.tests.com',
       label: 'VM from node',
-      primary_disk_size: '5',
-      swap_disk_size: '1',
-      template_id: '5',
-
-      initial_root_password: '123Aadsf_Asda45675',
-      rate_limit: 'none'
+      primary_disk_size: 5,
+      swap_disk_size: 1,
+      template_id: 5,
+      primary_network_id: 2,
+      primary_network_group_id: 2,
+      rate_limit: 0
     }
 
     client.createVirtualMachine(options, function (err, vm) {
