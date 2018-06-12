@@ -20,11 +20,12 @@
     "jquery": "3.3.x"
   },
   "devDependencies": {
-    "mocha": "*"
+    "chai": "~4.1.0",
+    "mocha": "~5.0.0"
   },
   "main": "./lib/onapp",
   "scripts": {
-    "test": "make test"
+    "test": "./node_modules/mocha/bin/mocha -R spec --exit"
   },
   "engines": {
     "node": ">= 0.8"

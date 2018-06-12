@@ -1,5 +1,6 @@
 /* global describe it before */
 var assert = require('assert')
+var expect = require('chai').expect
 var onapp = require('./../lib/onapp')
 var config = require('./config')
 
@@ -14,7 +15,7 @@ describe('user', function () {
   it('should get users list', function (done) {
     this.timeout(60000)
     client.getUsers(function (err, users) {
-      if (err) throw err
+      expect(err).to.be.null
       assert(true, users instanceof Array)
       done()
     })

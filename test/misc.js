@@ -1,5 +1,6 @@
 /* global describe it before */
 var assert = require('assert')
+var expect = require('chai').expect
 var onapp = require('./../lib/onapp')
 var config = require('./config')
 
@@ -14,7 +15,7 @@ describe('version', function () {
   it('should get templates', function (done) {
     this.timeout(30000)
     client.getSystemTemplates(function (err, templates) {
-      if (err) throw err
+      expect(err).to.be.null
       assert(true, templates instanceof Array)
       done()
     })
@@ -23,7 +24,7 @@ describe('version', function () {
   it('should get virtualmachines list', function (done) {
     this.timeout(60000)
     client.getVirtualMachines(function (err, vms) {
-      if (err) throw err
+      expect(err).to.be.null
       assert(true, vms instanceof Array)
       done()
     })

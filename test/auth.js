@@ -1,5 +1,6 @@
 /* global describe it before */
 var onapp = require('./../lib/onapp')
+var expect = require('chai').expect
 var config = require('./config')
 
 describe('authok', function () {
@@ -13,7 +14,8 @@ describe('authok', function () {
   it('should get version', function (done) {
     this.timeout(10000)
     client.getVersion(function (err, data) {
-      if (err) throw err
+      expect(err).to.be.null
+      expect(data).to.be.ok
       done()
     })
   })
@@ -30,7 +32,7 @@ describe('authnok', function () {
   it('should fail auth with wrong credentials', function (done) {
     this.timeout(10000)
     client.getVersion(function (err, data) {
-      if (!err) throw err
+      expect(err).to.be.ok
       done()
     })
   })

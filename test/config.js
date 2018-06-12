@@ -7,5 +7,5 @@ module.exports.validConfig = {
 module.exports.invalidConfig = {
   username: 'xxxxxxxxxxxxxxx',
   apiKey: 'xxxxxxxxxxxxxxx',
-  serverUrl: 'http://192.168.0.1'
+  serverUrl: process.env.URL || 'http://192.168.0.1'
 }
