@@ -87,7 +87,7 @@ client.getVirtualMachines(function (err, vm) {
 });
 
 //Creating an user, billing plan and its resurces
-client.createUser({'email': 'xpto@xpto.xpto','first_name': 'XPTO','last_name': 'OTPX','login': 'xptoxpto','password': '123qwe_123qwe, 'user_group_id': '1', 'role_ids': ['1']}, function(err, user) {
+client.createUser({'email': 'xpto@xpto.xpto','first_name': 'XPTO','last_name': 'OTPX','login': 'xptoxpto','password': '123qwe_123qwe', 'user_group_id': '1', 'role_ids': ['1']}, function(err, user) {
   if (err) throw err;
   console.log('User created!');
 
