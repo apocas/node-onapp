@@ -15,7 +15,7 @@ npm install onapp
 ##Examples:
 
 `````javascript
-var onapp = require('onapp');
+var Onapp = require('onapp');
 
 var config = {
   username: 'username@email.com',
@@ -23,17 +23,17 @@ var config = {
   serverUrl: 'http://192.168.1.1'
 };
 
-var client = onapp.createClient(config);
+var onapp = new Onapp(config);
 
 //Onapp version
-client.getVersion(function (err, data) {
+onapp.getVersion(function (err, data) {
   console.log(data);
 });
 
 
 //Template list
 //returns a array with Template objects.
-client.getSystemTemplates(function (err, templates) {
+onapp.getSystemTemplates(function (err, templates) {
   console.log(templates);
 });
 
@@ -56,7 +56,7 @@ var options = {
 };
 
 //return a VirtualMachine object
-client.createVirtualMachine(options, function (err, vm) {
+onapp.createVirtualMachine(options, function (err, vm) {
   if(err !== null) {
     console.log(err);
   } else {
@@ -67,7 +67,7 @@ client.createVirtualMachine(options, function (err, vm) {
 
 //Get VM details
 //returns a array of VirtualMachine objects
-client.getVirtualMachine('vm_id', function (err, vm) {
+onapp.getVirtualMachine('vm_id', function (err, vm) {
   if(err !== null) {
     console.log(err);
   } else {
@@ -78,7 +78,7 @@ client.getVirtualMachine('vm_id', function (err, vm) {
 });
 
 //Get VM List
-client.getVirtualMachines(function (err, vm) {
+onapp.getVirtualMachines(function (err, vm) {
   if(err !== null) {
     console.log(err);
   } else {
@@ -87,11 +87,11 @@ client.getVirtualMachines(function (err, vm) {
 });
 
 //Creating an user, billing plan and its resurces
-client.createUser({'email': 'xpto@xpto.xpto','first_name': 'XPTO','last_name': 'OTPX','login': 'xptoxpto','password': '123qwe_123qwe', 'user_group_id': '1', 'role_ids': ['1']}, function(err, user) {
+onapp.createUser({'email': 'xpto@xpto.xpto','first_name': 'XPTO','last_name': 'OTPX','login': 'xptoxpto','password': '123qwe_123qwe', 'user_group_id': '1', 'role_ids': ['1']}, function(err, user) {
   if (err) throw err;
   console.log('User created!');
 
-  client.createBillingPlan({'label': 'xpto@xpto.xpto plan','currency_code': 'USD','monthly_price': '0.0'}, function(err, billingplan) {
+  onapp.createBillingPlan({'label': 'xpto@xpto.xpto plan','currency_code': 'USD','monthly_price': '0.0'}, function(err, billingplan) {
     if (err) throw err;
     console.log('Billing plan created!');
 

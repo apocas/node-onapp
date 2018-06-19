@@ -1,5 +1,5 @@
 /* global describe it before after */
-var onapp = require('./../lib/onapp')
+var Onapp = require('./../lib/onapp')
 var config = require('./config')
 var expect = require('chai').expect
 
@@ -8,7 +8,7 @@ describe('virtualmachine', function () {
   var vmg
 
   before(function (done) {
-    client = onapp.createClient(config.validConfig)
+    client = new Onapp(config.validConfig)
     done()
   })
 

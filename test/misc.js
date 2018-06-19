@@ -1,14 +1,14 @@
 /* global describe it before */
 var assert = require('assert')
 var expect = require('chai').expect
-var onapp = require('./../lib/onapp')
+var Onapp = require('./../lib/onapp')
 var config = require('./config')
 
 describe('version', function () {
   var client
 
   before(function (done) {
-    client = onapp.createClient(config.validConfig)
+    client = new Onapp(config.validConfig)
     done()
   })
 

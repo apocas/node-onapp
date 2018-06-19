@@ -1,5 +1,5 @@
 /* global describe it before */
-var onapp = require('./../lib/onapp')
+var Onapp = require('./../lib/onapp')
 var expect = require('chai').expect
 var config = require('./config')
 
@@ -7,7 +7,7 @@ describe('authok', function () {
   var client
 
   before(function (done) {
-    client = onapp.createClient(config.validConfig)
+    client = new Onapp(config.validConfig)
     done()
   })
 
@@ -25,7 +25,7 @@ describe('authnok', function () {
   var client
 
   before(function (done) {
-    client = onapp.createClient(config.invalidConfig)
+    client = new Onapp(config.invalidConfig)
     done()
   })
 
