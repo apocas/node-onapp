@@ -36,6 +36,14 @@ describe('virtualmachine', function () {
     })
   })
 
+  it('should rename virtualmachine', function (done) {
+    this.timeout(10000)
+    vmg.edit({'label': 'VM from node RENAMED'}, function (err, data) {
+      expect(err).to.be.null
+      done()
+    })
+  })
+
   it('should get previous created virtualmachine', function (done) {
     this.timeout(10000)
     client.getVirtualMachine(vmg.id, function (err, vm) {
