@@ -4,13 +4,26 @@ var config = {
   serverUrl: process.env.URL || 'http://192.168.0.1'
 }
 
-
 var Onapp = require('./../lib/onapp')
 var client = new Onapp(config)
 
+client.getVirtualMachine('ikfckromytdksy', function (err, vm) {
+  if (err) throw err
 
-client.getVirtualMachine('wmqvrhtnelgqez', function (err, vm) {
+  vm.addInterface({'label': 'Customer', 'network_join_id': '8', 'rate_limit': '100'}, function (err, data) {
+    if (err) throw err
+    console.log(data)
+    console.log(data.network_interface.id)
+    vm.assignIP({'network_interface_id': data.network_interface.id, 'used_ip': '0'}, function (err, data) {
+      if (err) throw err
+      console.log(data)
+    })
+  })
+
+  /*
   vm.listInterfaces(function (err, data) {
+    if (err) throw err
     console.log(data)
   })
+  */
 })
