@@ -7,12 +7,12 @@ More methods coming...
 
 Check the examples below for usage.
 
-##Installation:
+## Installation:
 ```
 npm install onapp
 ```
 
-##Examples:
+## Examples:
 
 `````javascript
 var Onapp = require('onapp');
