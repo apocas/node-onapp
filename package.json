@@ -1,7 +1,7 @@
 {
   "name": "onapp",
   "description": "Node client implementation for Onapp",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Pedro Dias <petermdias@gmail.com>",
   "maintainers": [
     "apocas <petermdias@gmail.com>"
