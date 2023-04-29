@@ -16,7 +16,7 @@
     "onapp"
   ],
   "dependencies": {
-    "request": "2.87.x",
+    "request": "2.88.x",
     "jquery": "3.5.x"
   },
   "devDependencies": {
